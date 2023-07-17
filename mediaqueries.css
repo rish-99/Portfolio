@@ -1,8 +1,19 @@
+@media screen and (max-width: 1400px) {
+    #home {
+        height: 83hv;
+        margin-bottom: 6rem;
+    }
+    #home-content{
+        flex-wrap: wrap;
+    }
+}
+
 @media screen and (max-width: 1200px) {
     #dekstop-nav {
         display: none;
     }
-    #hanburger-nav {
+    #hamburger-nav {
         display: flex;
     }
 }
+

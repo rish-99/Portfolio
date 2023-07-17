@@ -20,7 +20,7 @@ body {
     z-index: 100;
 }
 
-.dekstop-nav{
+.up{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -55,23 +55,95 @@ body {
     color: #ff568c;
 }
 
-#hanburger-nav{
+#hamburger-nav{
     display: none;
 }
 
-.hanbuger-menu{
+.down{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.hamburger-menu{
     position: relative;
     display: inline-block;
+    z-index: 100;
 }
 
-.hanburger-icon{
+.hamburger-icon{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     width: 30px;
     height: 24px;
     cursor: pointer;
+    transition: all .3s ease-in-out;
 }
+
+.hamburger-icon span{
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    transition: all .3s ease-in-out;
+}
+
+.menu-links{
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: fit-content;
+    background: #060b32;
+    max-height: 0;
+    overflow: hidden;
+    transition: all .3s ease-in-out;
+}
+
+.menu-links a{
+    display: block;
+    padding: 10px;
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5rem;
+    transition: all .3s ease-in-out;
+}
+
+.menu-links li{
+    list-style: none;
+}
+
+.menu-links .open{
+    max-height: 300px;
+    z-index: 100;
+}
+
+.hamburger-icon .open span:first-child{
+    transform: rotate(45deg) translate(10px, 5px) ;
+}
+
+.hamburger-icon .open span:nth-child(2){
+    opacity: 0;
+}
+
+.hamburger-icon .open span:last-child{
+    transform: rotate(-45deg) translate(10px, -5px) ;
+}
+
+.hamburger-icon span:first-child{
+    transform : none;
+}
+
+.hamburger-icon span:nth-child(2){
+    opacity: 1;
+}
+
+.hamburger-icon span:last-child{
+    transform : none;
+}
+
+
+
 
 .home {
     width: 100%;
@@ -84,6 +156,7 @@ body {
     justify-content: center;
     align-items: center;
     padding: 70px 10% 0 0;
+    z-index: 1;
 }
 
 .home-content {
@@ -205,19 +278,30 @@ body {
 }
 
 .about-text h4 {
-    font-size: 20px;
+    font-size: 25px;
     font-weight: 600;
     color: #fff;
     line-height: 1.7;
     margin: 15px 0 30px;
 }
 
-.about-text p {
+.about-text h5 {
     font-size: 20px;
+    font-weight: 500;
+    color: #fff;
+    line-height: 1.7;
+    margin: 10px 0 10px;
+}
+
+.about-text p {
+    gap: 2rem;
+    font-size: 20px;
+    font-weight: 300;
     color: #fff;
     line-height: 1.4;
     margin-bottom: 4rem;
     padding-right: 20%;
+    padding-left: 10%;
     text-align: left;
 }
 

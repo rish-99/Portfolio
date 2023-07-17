@@ -12,34 +12,39 @@
 
 <body>
     <header class="header">
-        <div class="dekstop-nav">
-            <div class="logo">Portfolio</div>
-            <nav class="navbar">
-                <a href="#" style="--i:1" class="active">Home</a>
-                <a href="#" style="--i:2">About</a>
-                <a href="#" style="--i:3">Skill</a>
-                <a href="#" style="--i:4">Project</a>
-                <a href="#" style="--i:5">Contact</a>
-            </nav>
-        </div>
-        <nav id="hanburger-nav">
-            <div class="logo">Portfolio</div>
-            <div class="hanbuger-menu">
-                <div class="hanburger-icon" onclick="toggleMenue()">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+        <nav id="dekstop-nav">
+            <div class="up">
+                <div class="logo">Portfolio</div>
+                <div class="navbar">
+                    <a href="#home" style="--i:1" class="active">Home</a>
+                    <a href="#about" style="--i:2">About</a>
+                    <a href="#Skills" style="--i:3">Skill</a>
+                    <a href="#project" style="--i:4">Project</a>
+                    <a href="#contact" style="--i:5">Contact</a>
                 </div>
-                <div class="menu-links">
-                    <li><a href="#home" onclick="toggleMenue()">Home</a></li>
-                    <li><a href="#about" onclick="toggleMenue()">About</a></li>
-                    <li><a href="#Skills" onclick="toggleMenue()">Skills</a></li>
-                    <li><a href="#project" onclick="toggleMenue()">Project</a></li>
-                    <li><a href="#contact" onclick="toggleMenue()">Contact</a></li>
+            </div>
+        </nav>
+        <nav id="hamburger-nav">
+            <div class="down">
+                <div class="logo">Portfolio</div>
+                <div class="hamburger-menu">
+                    <div class="hamburger-icon" onclick="toggleMenu()">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <div class="menu-links">
+                        <li><a href="#home" onclick="toggleMenu()">Home</a></li>
+                        <li><a href="#about" onclick="toggleMenu()">About</a></li>
+                        <li><a href="#Skills" onclick="toggleMenu()">Skills</a></li>
+                        <li><a href="#project" onclick="toggleMenu()">Project</a></li>
+                        <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+                    </div>
                 </div>
             </div>
         </nav>
     </header>
+
     <section class="home">
         <div class="home-content">
             <h3>Hi, It's Me</h3>
@@ -49,34 +54,33 @@
                 <br>experience is to create and website design, frontend design and backend design no pic vs
             </p>
             <div class="home-sci">
-                <a href="#" style="--i:7"><i class='bx bxl-facebook'></i></a>
-                <a href="#" style="--i:8"><i class='bx bxl-instagram'></i></a>
+                <a href="#" style="--i:7" onclick="location.href='https://web.facebook.com/risini.methmini/'"><i
+                        class='bx bxl-facebook'></i></a>
+                <a href="#" style="--i:8" onclick="location.href='https://www.instagram.com/_rish_mg_/'"><i
+                        class='bx bxl-instagram'></i></a>
                 <a href="#" style="--i:9"><i class='bx bxl-whatsapp'></i></a>
-                <a href="#" style="--i:10"><i class='bx bxl-linkedin'></i></a>
+                <a href="#" style="--i:10" onclick="location.href='https://www.linkedin.com/in/risini-methmini/'"><i
+                        class='bx bxl-linkedin'></i></a>
+                <a href="#" style="--i:11" onclick="location.href='https://github.com/rish-99'"><i
+                        class='bx bxl-github'></i></a>
             </div>
-            <a href="#" class="btn-box">More About Me</a>
+            <a href="#" class="btn-box" onclick="window.open('./assets/Risini Gunathilaka_SE.pdf')">Download CV</a>
         </div>
     </section>
+
     <section class="about" id="about">
         <div class="about-img">
             <img src="./img/portfolio_pic.png" alt="">
         </div>
         <div class="about-text">
             <h2>About <span>Me</span></h2>
-            <h4>Full Stack Developer!</h4>
-            <p>
-                Hello, my name is Risini Methmini. I am a student and a web designer.
-                I am passionate about creating visually appealing and user-friendly websites.
-                With a strong foundation in web design principles and a keen eye for aesthetics,
-                I strive to deliver engaging and interactive web experiences.
-                I am constantly honing my skills and keeping up with the latest design trends to ensure that
-                my work is modern and innovative. Whether it's designing intuitive
-                user interfaces or crafting compelling visual elements,
-                I enjoy every aspect of the web design process.
-                I am dedicated to creating impactful and memorable websites that
-                leave a lasting impression. Feel free to explore my portfolio to see some of my
-                recent projects. Thank you for visiting!
-            </p>
+            <h4><i class='bx bxs-book' style="color: #d1086d;"></i> Education - </h4>
+            <h5> University of Moratuwa | Faculty of Information Technology</h5>
+            <p>Reading for B.Sc. (Hons) in Information Technology (2021-2025)</p>
+            <h5> Sri Lanka Telecom Training Centre, Welisara</h5>
+            <p>Certificate in Applied Information Technology (CAIT) (2018) </p>
+            <h5>Holy Cross College - Gampaha</h5>
+            <p>G.C.E. Advanced Level Examination (2019) - Bio Science Stream</p>
             <a href="#" class="btn-box">More About Me</a>
         </div>
     </section>
@@ -285,16 +289,17 @@
                 </div>
             </div>
             <div class="contact-form">
-                <form action="">
-                    <input type="" placeholder="Enter Your Name" required>
-                    <input type="email" placeholder="Enter Your Email" required>
-                    <input type="" placeholder="Enter Your Subject" required>
-                    <textarea type="" id="" cols="40" rows="10" placeholder="Enter Your Message"></textarea>
+                <form onsubmit="sendEmail(); reset(); return false;">
+                    <input type="text" id="name" placeholder="Enter Your Name" required>
+                    <input type="email" id="email" placeholder="Enter Your Email" required>
+                    <input type="text" id="subject" placeholder="Enter Your Subject" required>
+                    <textarea id="message" cols="40" rows="10" placeholder="Enter Your Message"></textarea>
                     <input type="submit" value="submit" class="send">
                 </form>
-            </div>
+            </div>            
         </div>
     </section>
+    <script src=" https://smtpjs.com/v3/smtp.js"></script>
     <script src="main.js"></script>
 </body>
 
